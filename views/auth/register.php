@@ -21,6 +21,6 @@
 
 
         <button class="btn btn-primary" type="submit">Register</button>
-        <a href="javascript:history.back()"><button type="button" class="btn btn-primary">Back</button></a>
+        <a href="/views/catalogo/index.php"><button type="button" class="btn btn-primary">Back</button></a>
     </form>
 </div>

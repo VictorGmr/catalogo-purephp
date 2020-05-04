@@ -17,24 +17,26 @@
         <!--@endif-->
         
 
-        <!--@if(Auth::check())-->
-            <div>
+        <?php
+        session_start();
+        if($_SESSION["loggedin"] == true){
+            echo
+            '<div>
 
-                <a style="display:inline-block;" href="/views/catalogo/edit.php?id=<?php echo $_GET['id'];?>"><button class="btn btn-primary">Edit</button></a>
-                
-                <form style="display:inline-block;" action="/ProductController/destroy.php" method="POST">
-                    <input type="hidden" value="<?php echo $_GET['id'];?>" name="id">
-                    <button class="btn btn-danger" type="submit">Delete</button>
-                </form>
-
-                <a style="display:inline-block;" href="javascript:history.back()"><button class="btn btn-primary">Back</button></a>
-            </div>
-        </div>
+            <a style="display:inline-block;" href="/views/catalogo/edit.php?id='.$_GET["id"].'"><button class="btn btn-primary">Edit</button></a>
             
-        <!--@else
-        <div style="text-align:center;">
+            <form style="display:inline-block;" action="/ProductController/destroy.php" method="POST">
+                <input type="hidden" value="'.$_GET["id"].'" name="id">
+                <button class="btn btn-danger" type="submit">Delete</button>
+            </form>
+
+            <a style="display:inline-block;" href="javascript:history.back()"><button class="btn btn-primary">Back</button></a>
+            </div>';
+        }else{
+            echo
+            '<div style="text-align:center;">
             <a href="javascript:history.back()"><button type="button" class="btn btn-primary">Back</button></a>
-        </div>
-            
-        @endif-->
+            </div>';
+        }
+        ?>
     </div>

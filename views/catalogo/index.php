@@ -54,9 +54,12 @@
 
     <div>
         <div style="margin-bottom: 10px">
-            <!--@if(Auth::check())-->
-                <a href="/views/catalogo/create.php"><button class="btn btn-primary">Add</button></a>
-            <!--@endif-->
+            <?php 
+            session_start();
+            if($_SESSION["loggedin"] == true){
+                echo '<a href="/views/catalogo/create.php"><button class="btn btn-primary">Add</button></a>';
+            }
+            ?>
         </div>
 
         <div style="display:inline-block">

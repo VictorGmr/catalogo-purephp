@@ -30,24 +30,30 @@
             </ul>
 
             <ul class="navbar-nav ml-auto">
-                <!--@if(!Auth::check())-->
-                    <li class="nav-item">
-                        <a class="nav-link" href="/views/auth/login.php">Login</a>
-                    </li>
+                <?php 
+                    session_start(); 
+                    
+                    if($_SESSION["loggedin"] == false){
+                        echo 
+                            '<li class="nav-item">
+                                <a class="nav-link" href="/views/auth/login.php">Login</a>
+                            </li>
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="/views/auth/register.php">Register</a>
-                    </li>
-                <!--@else
-                    <li class="nav-item">
-                        <p style="margin-right:20px;" class="nav navbar-text">Welcome, {{Auth::user()['name']}}</p>
-                    </li>
-                    <li class="nav-item">
-                        <form id="logout_form" action="{{route('logout')}}" method="POST">
-                            <a class="nav-link" href="javascript:$('#logout_form').submit();">Logout</a>
-                        </form>
-                    </li>
-                @endif-->
+                            <li class="nav-item">
+                                <a class="nav-link" href="/views/auth/register.php">Register</a>
+                            </li>';
+                    }else{
+
+                        echo 
+                            '<li class="nav-item">
+                                <p style="margin-right:20px;" class="nav navbar-text">Welcome, '.$_SESSION["nome"].'</p>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/AuthController/logout.php">Logout</a>
+                            </li>';
+                    }
+    
+                    ?>
             </ul>
         </div>
     </nav>
