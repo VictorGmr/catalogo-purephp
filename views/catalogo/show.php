@@ -22,7 +22,7 @@
 
                 <a style="display:inline-block;" href="/views/catalogo/edit.php?id=<?php echo $_GET['id'];?>"><button class="btn btn-primary">Edit</button></a>
                 
-                <form style="display:inline-block;" action="/destroy.php" method="POST">
+                <form style="display:inline-block;" action="/ProductController/destroy.php" method="POST">
                     <input type="hidden" value="<?php echo $_GET['id'];?>" name="id">
                     <button class="btn btn-danger" type="submit">Delete</button>
                 </form>

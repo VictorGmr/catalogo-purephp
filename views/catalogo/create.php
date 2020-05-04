@@ -1,7 +1,7 @@
 <?php require $_SERVER['DOCUMENT_ROOT']."/views/layouts/header.php"?>
 
 <div class="card" style="padding: 30px; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%)">
-    <form action="/store.php" enctype="multipart/form-data" method="POST">
+    <form action="/ProductController/store.php" enctype="multipart/form-data" method="POST">
 
         <div class="form-group">
             <label for="nome">Name of the product:</label>
