@@ -6,3 +6,6 @@
     <p class="lead">A simple product management application.</p>
   </div>
 </div>
+
+</body>
+</html>

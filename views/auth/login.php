@@ -19,3 +19,6 @@
         <a href="/views/catalogo/index.php"><button type="button" class="btn btn-primary">Back</button></a>
     </form>
 </div>
+
+</body>
+</html>

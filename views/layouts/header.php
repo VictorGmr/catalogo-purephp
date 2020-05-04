@@ -58,5 +58,3 @@
         </div>
     </nav>
     
-</body>
-</html>
